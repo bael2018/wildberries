@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILDBERRIES</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxANDw8PEBAPEA8PDxAQEBAQEBAQEBAPFRUWFhURFhUYHSggGB0mGxUVITIhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQGy4lICItMi8vLS4tLS0tLy0wMC0tLy0tLS0vLS0tLS04LS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALQAtAMBEQACEQEDEQH/xAAcAAEAAwEBAQEBAAAAAAAAAAACAQYHCAUEAwD/xABEEAABAwIBBQsHCgYDAAAAAAABAAIDBBEFBgcSIVETFCIxMkFhcoGRklRxgqGis9IWFzQ1U2J0lLGyIzNCUmPRQ3OD/8QAGgEBAQADAQEAAAAAAAAAAAAAAgABAwUEBv/EAC8RAQEAAgEDAQYFBAMBAAAAAAABAgMEERJRIQUTFDNBYTEycYGRUqGx0RXB8CL/2gAMAwEAAhEDEQA/AK6V9I+/olQ0SoaJUIlYGoKgolQ0SoaJWBolQ0SoUFQCVDRKholQ1BWBolQ0SoBKholYGoKholQ0VCtBWx9fRKholQ0SoaJWBqCoKJUNEqGiVgaJUNQVDRKgolQ0SoaJUNQVgaJUNEqCiVDRKwNQVDRKholQrQVsfX0SoaJUNEqESsDRKgqCoaKholQ0SsDUFQ0SoKJUNEqGiVDUFYGiVDRKgolQ0SsDUFQ0SoaKhWcrY+vqCoaJUNEqGiVDUFYCiVDRKholQ0SsDRKhqCoKJUNEqGoKholYGiVDRKgEqGiVgaJUNQVDRUK0FbX19ErA0SoaJUNErA1BUFEqGiVDRKholYGoKhEqCiVDRKholQ1BWBolQ0SoBKholYGoKholQ0VCtBWx9fRKholQ0SoaJWBqCoaJUFEqGiVDRKwNQVCJUFEqGiVDRKhqCsDRKholQCVDRKwNQVDRKhoqFaCtr6+iVgaJUNEqESsDUFQ0SoKJUNEqGiVgagqGiVBRKholQ0SoagrA0SoaJUAlQ0SsCgqGiVDRUK0FbH19EqGtWzZU9LVURbJT075YZXMLnwxucWnhNJJFzxkeiuVzLnhs9Lel+75v2rlt17uuOVks816GXOTtO7D6h0VPBHJE3dWujiYx1mG7hcD+3SWvjbsveTra8/B5Wyb8ZllbL6etYmV2H01QVBRKhrdMkMmKaOhphLTQPldGJHukije/SfwrEkc1wOxcXfvyuy9Lej5rlcnO7cu3K9P1eXnOycgGHumgghifBIx5MUTGF0Z4DgdEcXCB9FbOJuy950yv4tnB5Gfve3K29WMldV26gqEQL6hrJ4goK6JwjJWkhp4In0tM97ImNe90MTnOeGjScSRr13XDz3Z3K2Wvn9m/PLK2W/yz7PIymp9608EEET3ac0hjiYx2iOCwXaOInT1fdC9vCuWXXK17OFcsuuWVq15vsFpJcLpHyUtNI9zH6T3wxucf4jhrJFyvNyNmc25SWvNydmc25SWrD8naHyKk/Lw/CtPvc/6r/LR73Pzf5f3ydofIqP8ALw/Cr3uf9V/le8z83+Rdk3QEWNFRkfhofhV73P8Aqv8AK95n5quZQZsKCraTC3ekttTormO/TGTa3mst2vl7Mfx9WzDkZz8fViuUeAVGGTmCobZ3G1w1skZ/c084/RdPXsx2Tri9uOcznWPJKaqCoaKhWcrY+vqCoavGaTENzrJICdVRFcDa+PWPZL14efh1wmXhx/bGru1TPxf8/wDo1qaMPa5jhdrmlpG0EWIXKl6Xq+blsvWOcMSpDTzSwu5UUj4z0lriL+pfQ4Zd2Mvl9nrzmeEyn1j5Ssqvvydw/fdZTwcYklaHf9YN3nwgrXtz7MLk0cjZ7vXll4jowC2pcB8k+fE6MVME0DuTLG+M9GkCL+tLDLtyl8Fhl2ZTKfRzRUROje5jhZzHFrhscDYhfQS9Z1j6mWWdY/IqYr3cg8P31iVLGRdrZBK7Zox8PX57Adq08jPt15V5eVn2asq6IXDfPufM5eJb6xOoIN2wkQM6BGLO9vTPau1xcO3VPv6u3xcO3VPv6tdzbfVNH1H+8euZyfm5OXyfm5Pwzi5UTYTBDJCyJ7pJSwiUOIA0SbjRI2LPG0zbbKzx9U2WyqCc8Fd9hR+Gb417PgcPNer4PDzUxZ4qwOGlT0pbfWG7q0kdBLjbuVeDh5o3iY+a07JHKeHFoN2iu1zSGyxON3Rv2X5weY8/RrA8G7TdeXSvHs13C9K83OfgLK7DpnaI3ama6eJ3ONEXe3zFoOraBsT42y4ZzxWdOfbl+rnYrsPfRKhoqFaCtj6+iVDX24DX71qqefmjla53UvZw7iVr24d+Fxefka/eassPMdDg31jiK+ffFMVzp4fuGIueBZtRGyUbNLkO9bb9q7PCz7tXTw+m9mbO/RJ49FOK9T3Vfcz2HbpVy1BGqCLRaf8AJIbftDu9eHnZ9MJj5cr2rs6a5h5v+Gn5QYmKKlnqSAdyYXAE2DnHU1t+kkBc7Vh35zHy4unX7zZMPL7KaZsrGSNN2yNa9p2tcLg9xQs6XpWvKXG2VhOc3Dt7YnNYWbPozt9Ple2HLs8TPu1T7ejv8LZ36Z9vRUyvQ9TS8ymH6UtVUkchjYWnpedJ3cGt714Ofn6TFy/aOfpjj+7UMWrRS0887uKGJ8ltuiCQO3iXOwx7spPLl4Y92Ux8uYppC9znuN3OcXOJ5yTcld+Tp6PoenT0dBZtvqmj6j/ePXF5PzcnD5Xzclbz4/RKX8Qf2Fb+D+a/o3cL81/RjJXTdCiVA0/MU2Td6wi+5bjGHbN00joerTXg53TtxePl9Okaxi7g2mqC7kiCUuvxWDDdc/D80eLH8Y5TK7zp0SoaKhWgrY+volQ0Soa3rIjEN9YfTSE3c2Pc37dKPg3PnsD2rhcnDs2ZR8fztXu9+U/f+VazxUGnT09QBrikMbj914vr7WjvXo4GfTK4+Xs9kbOmeWHmf4ZKV1Hdra81eHbhhzXkWdUPdKdujyW+pt/SXH5ufds6eHzftLZ37rPHo8/PJiO50sNODrnlL3dSMcXic3uT4OHXO5eD9l6+udz8T/L1s2OI74w2EE3dAXQO9HW32XN7lq5eHbtv39Wjn6+zdfv6q/npw7SipqoD+W90Lz9140m37WnxLfwM/W4vR7N2euWH7slK6TrVu+a3D974ZESLOnc+d3pHRb7LWntXG5efdtv2cDm5922/b0fJnfxLccO3IHhVMrWdOg3huPeGjtS4WHXZ18M8HDu2dfDDSuu69dC5tvqmj6j/AHj1xOT83Jw+T83J+ecDJZ+LwwxMlZEY5S8l4JBGiRbV51nj7pqtti0bprttUb5nKjyuDwPXr+Ox8PT8Zj4KLM3MXDTrIg3nLYnOdboBIWLzp9IN5k8NKyYyegwuAQQA2vpPe7W+R9raR7uLmXh27ctmXWvJs2XO9aqed7KllLSvoo3A1FS3ReBrMcB5ROwuGoDYSV6OJpuWXdfwjbo19b3eGFldR7KJUNFQrQVsfXiVDRKhrT8zuIXZU0xPJc2ZnmcNF37W965nPw9Zl+z5/wBs6v8A6x2fsuGV+H76oKqK13GIuYPvs4bR3tA7V49GfZsxrmcTZ7vdjl93P9NA6WRkbdbpHtY0bXONh6yu7b0nWvq88pjLb9HSNBStp4ooWcmKNkbfM0AD9F8/ll3W2/V8dnnc8rlfqxbOpiO74i9gN207GRDZpcp3rdb0V1uHh26uvl9B7P19umXz6vWzM4joz1FMTqlYJWbNJhs4echw8K1c/DrjMnn9qa+uOOfj0X/LTDd+YfVQgXduRewc+6M4bQPOW27V4tGfZslczjbOzbjXPVLTumkjibypHtY3rOIA/VdvK9Ja+hyvbLa6ao6dsMUcTeTExkbeq0AD1BfP5XrbXzGWXdbb9WOZ5sS3WtjpweDTRC42SScI+yGLqcHDphcvLrcDDpruXlnpXteyuhc231TR9R/vHricn5uTh8n5uT18XxmmoWtfUytia92i0uvrda9tQWvDXln6Yxrwwyz/ACx5Xy8wvyyLuf8A6Wz4bb4P4fZ4f3y8wry2Luf/AKV8Nt8Me42eHt0GIQ1TN0gljlZxaUbg8X2auIrVljcb0sa7jZ6VQ84+b6OsZJV0rdGrAL3sbyajnOrmf08/PtXq4/JuPTHL8P8ADfp3XH0v4MNK6j2USoaJUK0FbX19ErA0SoasmbrEN74lBc2bNpQO9Pk+2GrzcvDu1X7ern+0tffx8vt6tzXEfKMgyXyf0cekiI4FJJJMNX9I/lfvYexdbdu68eXz/wCr6Dk8jrw5l9cuk/21qrqGwxySu1NjY57j91oJPqC5WM62SODjjcrJPq5qrql08skr9b5Xue7rOJJ/VfQ44zGSR9ZjjMcZjPo9HI/Ed6V9LNezRKGv6j+A71OJ7Fq34d+vKNHK19+rLF0SuE+YY3kzk7ueUL4S3+HSSSTgf4+OI974z2Lq7dvXj9fPp/t2d+/rxZl59P8AbYybazqA4z0LlOM5nyixDfdXUVHNLM9zehl7NHY0ALv68ezCYvodeHZhMfDzSmVdC5tvqmj6j/ePXE5PzcnD5Xzclbz4/RKX8Qf2Fb+D+a/o3cL81/RjJXTdCiVAs+bjHpKHEIA1x3KokZDMz+lwedEOttaTe/n2rz8nXM8L9mjfhMsb9nRa4zmObM4+HtpcVrI2ABhkErQNQG6Na8gdriOxdrj5d2uV0NV64RWStxUVCtBWx9fRKholQ1MMpjc17TZzHBzTscDcFYs6zpQykylldG4bViohimbyZY2SDo0gDb1r57PHtys8PitmFwzuN+lfjT4WyOqnqhy544mO/wDPS19oLfCs3O3CY+Cy23LXjh9J1/u8DOjiO98NkaDZ1Q5sItsPCd7LSO1b+Hh3bZfD0+ztfful8erDSuy+iolYGui8ksR35QUs5N3OiaHnnMjeC8+JpXC3Ydmyx8vyNfu9uWL94cKjZVzVY/mTQxRH0C4k9oLR6IRuduEx8DdluEw8V5+XmI70w2qkBs50ZiZt0pOBq8wJPYnx8O7ZIfGw79uMc7Fdx3qJUNdC5tvqmj6j/ePXE5PzcnD5Pzclbz4/RKX8Qf2Fb+D+a/o3cL81/RjJXTdCiVAt+bPJqWurYZtFwp6aRsskhFmlzCHNjB5yTa42XXm5O2YYWfWvPv2THGz610GuO5rnDOdWioxasc0gtY9sQttjY1jvaDl2eNj26o9+qdMIqpW86KhWgrY+volQ0SoaJUNbPmrxDdsPEZPCp5HR9OieG0+0R6K43Nw7dnXy+Y9qa+3f3eZ1XJeRzWR548R06iCmB1Qxl7uvIdQ7mjxLqcDDpjcvLu+ytfTDLPz/ANM7K97p0SsDWuZmMR06eopidcUgkb1JBYgeYt9pczn4dMpl5cT2nr6ZzPy0ZeBzGYZ7MRtHS0oPKc6Z46GjRZ63O7l0OBh63J0vZ2Hrll+zJSuk6dEqGuhc231TR9R/vHricn5uTh8n5uT3qyhhqAGzRRStBuBLG2QA7QHDUtOOVx/CtMys/Cvk+TtD5FR/l4fhT97n/Vf5L3mfm/yj5OUPkVH+Wh+FXvc/6r/K95n5r0Yo2saGtaGtaLBrQA0DYAOJa7eoKdnDy4jwyJ0UTg+tkaQxosdxB/5H7Ogc/mXp4/Huy9b+Ddq1XO9b+Dn17iSSSSSbknWSTzrrvcBUNFQrQVtfX0SsDRKholQ17eTGVM+FmUwtjeJQ3SEgcRwb2IsRtK0btGO3p1+jxcriYcjp3fTw9/51a37Gl8MvxrR8Br814/8AidXm/wBv9KbjeJyVtRJUS2D5SCQ2+iLAAAX5rAL1a8JhjMY92rVNWEwx/CPgKZUSoa9bJnKGbC5nTQhji6MxubIHFpaSDzEa7gLVt1Y7celeffox3Y9uSz/O1W/YUnhl+Neb4DDzXi/43X5v9v8ASpZTY/Lic++JgxrgxsYawENDW3Oq5J4yT2r06tU149senVpx1Y9seQVsOiVDVzwPOTV0NNFTRxUzmRAhpe2QuILi7XZ4HOvJs4mGeVytrx7OJhnlcra+753677Ck8M3xofA4ea1/BYeaj54K77Cj8M3xq+Bw80fg8PNH54a77Cj8M3xq+Bw81j4TDzXmYtnOxOpaWiSOnaRY73YWu8TiXDsITx4mvH7/AKszj4RS5Xl5LnEuc4klxJJJPGSTxlenp0bQKholQ0VCtBWx9fRKholQ0SoaJWBqCoKJUNEqGiVDRKwNQVDRKgolQ0SoaJUNQVgaJUNEqCiVDRKhqCsDRKhoqFaCtj6+iVDRKholQiVgagqCiVDRKholQ0SsDRKhqCoKJUNEqGiVDUFYGiVDRKgEqGiVgagqGiVDRUK0FbH19EqGiVDRKholYGiVBUFQ0SoaJWBolQ1BUIqCiVDRKholQ1BWBolQ0SoKJUNErA0SoagqGioVnK2Pr6gqGiVDRKholYGiVBUFQ0SoaJUNErA0SoagqCiVDRKholQ1BWBolQ0SoKJUNEqGiVgagqGioVoK2Pr6JUNEqGiVDRKwNQVBRKholQiVgaJUNEqGoKgolQ0SoaJUNErA1BUNEqASoaJUNQVgaJUNFQrQVsfX0SoaJUNEqGiVgagqGiVBRKholQ0SsDRKhQVBRKholQ0SoUFYGiVDRKgolQ0SsDUFQ0SoaKhWcrY+vqCoaJUIlQiVgUFQUSoaJUNErA1BUNEqCiVCKhQVCJWBolQ0SoUFQUSoaJWBolQ0SoahQv/Z">
+    <script src="https://kit.fontawesome.com/5c459b5eb0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="first_nav">
+            <ul>
+                <li><a href="#">Бишкек</a></li>
+                <li><a class="back_link" href="#">Бесплатная доставка</a></li>
+                <li><a class="ubr" href="#">Частые вопросы</a></li>
+                <li><a class="con" href="#">Сменить страну</a></li>
+            </ul>
+        </div>
+
+        <div class="second_nav">
+            <ul>
+                <li class="bars">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </li>
+                <li class="wild">
+                    <a href="#">WILDBERRIES</a>
+                </li>
+            </ul>
+
+            <label>
+                <input placeholder="Я ищю..." type="search" name="search">
+                <i class="fas fa-search"></i>
+                <button title="Поиск по фото"><i class="fas fa-camera"></i></button>
+            </label>
+
+            <span><a href="#"><i class="fas fa-briefcase"></i></a></span>
+
+            <ol>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Адреса</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user"></i>
+                        <p>Войти</p>
+                    </a>
+                </li>
+                <li class="korzina">
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Корзина</p>
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </header>
+
+    <main>
+        <section class="main_block1">
+            <div class="center">
+                <div class="main_picture1"></div>
+
+                <div class="nons1">
+                    <p class="Oslo">* условия акции внутри</p>
+                </div>
+
+                <div class="nons2">
+                    <h1>Хиты продаж</h1>
+                </div>
+
+                <section class="pictures">
+                    <div class="image1">
+                        <a href="#"><img src="img/pic1.jpg"></a>
+                        <b class="bolder">3 986 сом</b> <span class="span_all"><del>6 040 сом</del></span>
+                        <p class="para_all">Philips / Электрическая</p>
+                    </div>
+                    <div class="image2">
+                        <a href="#"><img src="img/pic2.jpg"></a>
+                        <b class="bolder">2 515 сом</b> 
+                        <p class="para_all"> Honor / Умный браслет</p>
+                    </div>
+                    <div class="image3">
+                        <a href="#"><img src="img/pic3.jpg"></a>
+                        <b class="bolder">2 949 сом</b> <span class="span_all"><del>3 277 сом</del></span>
+                        <p class="para_all"> Raven. / Худи</p>
+                    </div>
+                    <div class="image4">
+                        <a href="#"><img src="img/pic4.jpg"></a>
+                        <b class="bolder">584 сом</b> <span class="span_all"><del>3 636 сом</del></span>
+                        <p class="para_all"> НАНОПЯТКИ / Средств</p>
+                    </div>
+                    <div class="image5">
+                        <a href="#"><img src="img/pic5.jpg"></a>
+                        <b class="bolder">2 052 сом</b> 
+                        <p class="para_all"> GILLETTE / Сменные</p>
+                    </div>
+                    <div class="image6">
+                        <a href="#"><img src="img/pic6.jpg"></a>
+                        <b class="bolder">45 440 сом</b> 
+                        <p class="para_all"> Samsung / Смартфон</p>
+                    </div>
+                    <div class="image7">
+                        <a href="#"><img src="img/pic7.jpg"></a>
+                        <b class="bolder">3 135 сом</b> <span class="span_all"><del>8 383 сом</del></span>
+                        <p class="para_all"> ТМ Belezzaa / Костюм</p>
+                    </div>
+                    <div class="image8">
+                        <a href="#"><img src="img/pic8.jpg"></a>
+                        <b class="bolder">2 203 сом</b> <span class="span_all"><del>3 934 сом</del></span>
+                        <p class="para_all"> REDMOND / Блендер</p>
+                    </div>
+                    <div class="image9">
+                        <a href="#"><img src="img/pic9.jpg"></a>
+                        <b class="bolder">5 972 сом</b> <span class="span_all"><del>7 858 сом</del></span>
+                        <p class="para_all"> Makita / Дрель-шуруп</p>
+                    </div>
+                    <div class="image10">
+                        <a href="#"><img src="img/pic10.jpg"></a>
+                        <b class="bolder">2 023 сом</b> 
+                        <p class="para_all"> GILLETTE / Кассеты</p>
+                    </div>
+                    <div class="image11">
+                        <a href="#"><img src="img/pic11.jpg"></a>
+                        <b class="bolder">3 955 сом</b> <span class="span_all"><del>4 824 сом</del></span>
+                        <p class="para_all"> Samsung / SSD</p>
+                    </div>
+                    <div class="image12">
+                        <a href="#"><img src="img/pic12.jpg"></a>
+                        <b class="bolder">348 сом</b> <span class="span_all"><del>730 сом</del></span>
+                        <p class="para_all"> Просто Здорово / Араx</p>
+                    </div>
+                </section>
+
+                <section class="double">
+                    <div title="Pepe Jeans" class="double_left">
+                        <div></div>
+                    </div>
+                    <div title="Calvin Klein" class="double_right">
+                        <div></div>
+                    </div>
+                </section>
+
+                <section class="pictures">
+                    <div class="image1">
+                        <a href="#"><img src="img/pic13.jpg"></a>
+                        <b class="bolder">2 265 сом</b> <span class="span_all"><del>3 020 сом</del></span>
+                        <p class="para_all">Philips / Фен</p>
+                    </div>
+                    <div class="image2">
+                        <a href="#"><img src="img/pic14.jpg"></a>
+                        <b class="bolder">491 сом</b> <span class="span_all"><del>1 111 сом</del></span>
+                        <p class="para_all"> IRIS / Тюль на шторной</p>
+                    </div>
+                    <div class="image3">
+                        <a href="#"><img src="img/pic15.jpg"></a>
+                        <b class="bolder">23 220 сом</b> 
+                        <p class="para_all"> Samsung / Смартфон</p>
+                    </div>
+                    <div class="image4">
+                        <a href="#"><img src="img/pic16.jpg"></a>
+                        <b class="bolder">30 290 сом</b>
+                        <p class="para_all"> Samsung / Смартфон</p>
+                    </div>
+                    <div class="image5">
+                        <a href="#"><img src="img/pic17.jpg"></a>
+                        <b class="bolder">3 636 сом</b> <span class="span_all"><del>6 060 сом</del></span>
+                        <p class="para_all"> Major Fabric / Джинсы</p>
+                    </div>
+                    <div class="image6">
+                        <a href="#"><img src="img/pic18.jpg"></a>
+                        <b class="bolder">3 180 сом</b> <span class="span_all"><del>4 544 сом</del></span>
+                        <p class="para_all"> CROCS / Сабо</p>
+                    </div>
+                    <div class="image7">
+                        <a href="#"><img src="img/pic19.jpg"></a>
+                        <b class="bolder">506 сом</b> <span class="span_all"><del>2 222 сом</del></span>
+                        <p class="para_all"> AxWild / Рецептурная</p>
+                    </div>
+                    <div class="image8">
+                        <a href="#"><img src="img/pic20.jpg"></a>
+                        <b class="bolder">276 сом</b> <span class="span_all"><del>722 сом</del></span>
+                        <p class="para_all"> UZcotton / Футболка</p>
+                    </div>
+                    <div class="image9">
+                        <a href="#"><img src="img/pic21.jpg"></a>
+                        <b class="bolder">3 446 сом</b> <span class="span_all"><del>6 565 сом</del></span>
+                        <p class="para_all"> Major Fabric / Джинсы</p>
+                    </div>
+                    <div class="image10">
+                        <a href="#"><img src="img/pic22.jpg"></a>
+                        <b class="bolder">2 686 сом</b> <span class="span_all"><del>4 333 сом</del></span>
+                        <p class="para_all"> ASICS / Кроссовки</p>
+                    </div>
+                    <div class="image11">
+                        <a href="#"><img src="img/pic23.jpg"></a>
+                        <b class="bolder">2 722 сом</b> <span class="span_all"><del>6 050 сом</del></span>
+                        <p class="para_all"> ASICS / Кроссовки</p>
+                    </div>
+                    <div class="image12">
+                        <a href="#"><img src="img/pic24.jpg"></a>
+                        <b class="bolder">222 190 сом</b> 
+                        <p class="para_all"> MSI / Ноутбук GE65</p>
+                    </div>
+                </section>
+                
+                <section class="double2">
+                    <div title="Выбор стилиста для женщин" class="double2_left">
+                        <div></div>
+                    </div>
+                    <div title="Акссесуары и обувь" class="double2_right">
+                        <div></div>
+                    </div>
+                </section>
+
+                <section class="pictures">
+                    <div class="image1">
+                        <a href="#"><img src="img/pic25.jpg"></a>
+                        <b class="bolder">4 426 сом</b> <span class="span_all"><del>6 324 сом</del></span>
+                        <p class="para_all"> Oral-B / Электрическая</p>
+                    </div>
+                    <div class="image2">
+                        <a href="#"><img src="img/pic26.jpg"></a>
+                        <b class="bolder">4 039 сом</b> 
+                        <p class="para_all"> Reebok / Кроссовки</p>
+                    </div>
+                    <div class="image3">
+                        <a href="#"><img src="img/pic27.jpg"></a>
+                        <b class="bolder">7 139 сом</b> <span class="span_all"><del>9 272 сом</del></span>
+                        <p class="para_all"> Makita / Дрель-шуруп</p>
+                    </div>
+                    <div class="image4">
+                        <a href="#"><img src="img/pic28.jpg"></a>
+                        <b class="bolder">3 466 сом</b> <span class="span_all"><del>4 333 сом</del></span>
+                        <p class="para_all"> APRIL WINGS / Брюки</p>
+                    </div>
+                    <div class="image5">
+                        <a href="#"><img src="img/pic29.jpg"></a>
+                        <b class="bolder">3 584 сом</b> <span class="span_all"><del>18 382 сом</del></span>
+                        <p class="para_all"> MISSLIZA / Босоножки</p>
+                    </div>
+                    <div class="image6">
+                        <a href="#"><img src="img/pic30.jpg"></a>
+                        <b class="bolder">465 сом</b> <span class="span_all"><del>620 сом</del></span>
+                        <p class="para_all">  LOVULAR / Салфетки</p>
+                    </div>
+                    <div class="image7">
+                        <a href="#"><img src="img/pic31.jpg"></a>
+                        <b class="bolder">11 100 сом</b>
+                        <p class="para_all"> Samsung / Смартфон</p>
+                    </div>
+                    <div class="image8">
+                        <a href="#"><img src="img/pic32.jpg"></a>
+                        <b class="bolder">27 736 сом</b> 
+                        <p class="para_all"> MARSHALL / Акусти</p>
+                    </div>
+                    <div class="image9">
+                        <a href="#"><img src="img/pic33.jpg"></a>
+                        <b class="bolder">584 сом</b> <span class="span_all"><del>3 636 сом</del></span>
+                        <p class="para_all"> НАНОПЯТКИ / Средств</p>
+                    </div>
+                    <div class="image10">
+                        <a href="#"><img src="img/pic34.jpg"></a>
+                        <b class="bolder">2 225 сом</b> <span class="span_all"><del>3 424 сом</del></span>
+                        <p class="para_all"> Philips / Эпилятор</p>
+                    </div>
+                    <div class="image11">
+                        <a href="#"><img src="img/pic35.jpg"></a>
+                        <b class="bolder">3 938 сом</b> <span class="span_all"><del>6 564 сом</del></span>
+                        <p class="para_all"> adidas / Кроссовки</p>
+                    </div>
+                    <div class="image12">
+                        <a href="#"><img src="img/pic36.jpg"></a>
+                        <b class="bolder">89 329 сом</b>  <span class="span_all"><del>94 940 сом</del></span>
+                        <p class="para_all"> Шуба меховая</p>
+                    </div>
+                </section>
+                
+                <section class="pictures">
+                    <div class="image1">
+                        <a href="#"><img src="img/pic37.jpg"></a>
+                        <b class="bolder">7 263 сом</b> <span class="span_all"><del>8 070 сом</del></span>
+                        <p class="para_all"> Philips / Набор</p>
+                    </div>
+                    <div class="image2">
+                        <a href="#"><img src="img/pic38.jpg"></a>
+                        <b class="bolder">3 029 сом</b>  <span class="span_all"><del>5 049 сом</del></span>
+                        <p class="para_all"> Adidas / Кроссовки</p>
+                    </div>
+                    <div class="image3">
+                        <a href="#"><img src="img/ins.jpg"></a>
+                        <b class="bolder">945 сом</b> <span class="span_all"><del>1 278 сом</del></span>
+                        <p class="para_all"> Lavazza / Кофе Qualita</p>
+                    </div>
+                    <div class="image4">
+                        <a href="#"><img src="img/pic39.jpg"></a>
+                        <b class="bolder">66 056 сом</b>
+                        <p class="para_all"> GARMIN / Эхолот Str</p>
+                    </div>
+                    <div class="image5">
+                        <a href="#"><img src="img/pic40.jpg"></a>
+                        <b class="bolder">14 635 сом</b>
+                        <p class="para_all"> Irbis / Ноутбук NB67</p>
+                    </div>
+                    <div class="image6">
+                        <a href="#"><img src="img/pic41.jpg"></a>
+                        <b class="bolder">4 086 сом</b> <span class="span_all"><del>9 080 сом</del></span>
+                        <p class="para_all"> ASICS / Кроссовки</p>
+                    </div>
+                    <div class="image7">
+                        <a href="#"><img src="img/pic42.jpg"></a>
+                        <b class="bolder">11 019 сом</b> <span class="span_all"><del>12 381 сом</del></span>
+                        <p class="para_all"> Gigabyte / Материнская</p>
+                    </div>
+                    <div class="image8">
+                        <a href="#"><img src="img/pic43.jpg"></a>
+                        <b class="bolder">2 120 сом</b> <span class="span_all"><del>3 029 сом</del></span>
+                        <p class="para_all"> CROCS / Сабо</p>
+                    </div>
+                    <div class="image9">
+                        <a href="#"><img src="img/pic44.jpg"></a>
+                        <b class="bolder">19 180 сом</b> 
+                        <p class="para_all"> Samsung / Смартфон</p>
+                    </div>
+                    <div class="image10">
+                        <a href="#"><img src="img/pic45.jpg"></a>
+                        <b class="bolder">832 сом</b> 
+                        <p class="para_all"> GILLETTE / Кассеты</p>
+                    </div>
+                    <div class="image11">
+                        <a href="#"><img src="img/pic46.jpg"></a>
+                        <b class="bolder">414 сом</b> <span class="span_all"><del>1 918 сом</del></span>
+                        <p class="para_all"> A-A Узка Офисная</p>
+                    </div>
+                    <div class="image12">
+                        <a href="#"><img src="img/pic47.jpg"></a>
+                        <b class="bolder">1 631 сом</b>  <span class="span_all"><del>2 175 сом</del></span>
+                        <p class="para_all"> Oral-B / Электрическая</p>
+                    </div>
+                </section>
+
+                <section class="pictures2">
+                    <div class="image1">
+                        <a href="#"><img src="img/pic48.jpg"></a>
+                        <b class="bolder">1 424 сом</b> <span class="span_all"><del>2 414 сом</del></span>
+                        <p class="para_all"> Xiaomi / Внешний акк</p>
+                    </div>
+                    <div class="image2">
+                        <a href="#"><img src="img/pic49.jpg"></a>
+                        <b class="bolder">20 190 сом</b>
+                        <p class="para_all"> Samsung / Смартфон</p>
+                    </div>
+                    <div class="image3">
+                        <a href="#"><img src="img/pic50.jpg"></a>
+                        <b class="bolder">73 720 сом</b>
+                        <p class="para_all"> MSI / Ноутбук</p>
+                    </div>
+                </section>
+
+                <section class="title1">
+                    <div class="nons3">
+                        <h1>Популярные бренды</h1>
+                        <div>
+                            <a href="#">Смотреть все</a>
+                        </div> 
+                    </div>
+                </section>
+
+                <section class="choose">
+                    <a href="#">Женщинам</a>
+                    <a href="#">Мужчинам</a>
+                    <a href="#">Детям</a>
+                    <a href="#">Обувь</a>
+                    <a href="#">Акссесуары</a>
+                    <a href="#">PREMIUM</a>
+                    <a href="#">Спорт</a>
+                    <a href="#">Игрушки</a>
+                    <a href="#">Красота</a>
+                </section>
+
+                <section class="icons">
+                    <div class="icon_inner1"></div>
+                    <div class="icon_inner2"></div>
+                    <div class="icon_inner3"></div>
+                    <div class="icon_inner4"></div>
+                    <div class="icon_inner5"></div>
+                    <div class="icon_inner6"></div>
+                    <div class="icon_inner7"></div>
+                    <div class="icon_inner8"></div>
+                    <div class="icon_inner9"></div>
+                    <div class="icon_inner10"></div>
+                    <div class="icon_inner11"></div>
+                    <div class="icon_inner12"></div>
+                    <div class="icon_inner13"></div>
+                    <div class="icon_inner14"></div>
+                    <div class="icon_inner15"></div>
+                    <div class="icon_inner16"></div>
+                    <div class="icon_inner17"z></div>
+                    <div class="icon_inner18"></div>
+                    <div class="icon_inner19"></div>
+                    <div class="icon_inner20"></div>
+                    <div class="icon_inner21"></div>
+                    <div class="icon_inner22"></div>
+                    <div class="icon_inner23"></div>
+                    <div class="icon_inner24"></div>
+                    <div class="icon_inner25"></div>
+                    <div class="icon_inner26"></div>
+                    <div class="icon_inner27"></div>
+                    <div class="icon_inner28"></div>
+                    <div class="icon_inner29"></div>
+                    <div class="icon_inner30"></div>
+                    <div class="icon_inner31"></div>
+                    <div class="icon_inner32"></div>
+                    <div class="icon_inner33"></div>
+                    <div class="icon_inner34"></div>
+                    <div class="icon_inner35"></div>
+                    <div class="icon_inner36"></div>
+                    <div class="icon_inner37"></div>
+                    <div class="icon_inner38"></div>
+                    <div class="icon_inner39"></div>
+                    <div class="icon_inner40"></div>
+                    <div class="icon_inner41"></div>
+                    <div class="icon_inner42"></div>
+                    <div class="icon_inner43"></div>
+                    <div class="icon_inner44"></div>
+                    <div class="icon_inner45"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer_main">
+            <div class="footer_upper">
+                <div class="upper_foot1">
+                    <b>Покупателям</b>
+                    <p><a href="#">Как сделать заказ</a></p>
+                    <p><a href="#">Способы оплаты</a></p>
+                    <p><a href="#">Доставка</a></p>
+                    <p><a href="#">Возврат товара</a></p>
+                    <p><a href="#">Возврат денежных средств</a></p>
+                    <p><a href="#">Правила продажи</a></p>
+                    <p><a href="#">Правила пользования торговой площадкой</a></p>
+                    <p><a href="#">Вопросы и ответы</a></p>
+                </div>
+                <div class="upper_foot2">
+                    <b>Партнерам</b>
+                    <p><a href="#">Партнерская программа</a></p>
+                    <p><a href="#">Как начать сотрудничество</a></p>
+                    <p><a href="#">Преимущества</a></p>
+                </div>
+                <div class="upper_foot3">
+                    <b>Компания</b>
+                    <p><a href="#">О нас</a></p>
+                    <p><a href="#">Реквизиты</a></p>
+                    <p><a href="#">Пресс-центр</a></p>
+                    <p><a href="#">Контакты</a></p>
+                </div>
+                <div class="upper_foot4">
+                    <b>Мы в соцсетях</b>
+                    <p><a href="#">Вконтакте</a></p>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Одноклассники</a></p>
+                    <p><a href="#">YouTube</a></p>
+                    <p><a href="#">Instagram</a></p>
+                </div>
+                <div class="upper_foot5">
+                    <b>Мобильные устройства</b>
+                    <div class="div1">
+                        <a class="foot5_link" href="#"><i class="fab fa-google-play"></i></a>
+                        <a class="foot5_link2" href="#">Доступно в <br> <span> Google PLay</span></a>
+                    </div>
+                    <div>
+                        <a class="foot5_link" href="#"><i class="fab fa-apple"></i></a>
+                        <a class="foot5_link2" href="#">Загрузите в <br> <span> App Store</span></a>
+                    </div>
+                    <a href="#">Перейти на <span class="spanan">мобильную версию сайта</span></a>
+                </div>
+            </div>
+
+            <section class="footer_lower">
+                <div class="lower_inner1">
+                    <a href="#">Детям</a>
+                    <a href="#">ЗОЖ и спорт</a>
+                    <a href="#">On-line журнал</a>
+                    <a class="blog" href="#">Модный блог</a>
+                    <a class="Ence" href="#">Энциклопедия моды</a>
+                </div>
+                <div class="lower_inner2">
+                    <p>2013-2020 © Wildberries — модный интернет-магазин одежды, обуви и аксессуаров.</p>
+                    <p>Все права защищены. Доставка по всей Киргизии.</p>
+                    <a href="#">Проверка совместимости</a>
+                </div>
+                <div class="lower_inner3">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                </div>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>
